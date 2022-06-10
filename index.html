@@ -8,9 +8,19 @@
   
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>|-|</text></svg>">
+  <script type="text/javascript">
+    var current = 1; 
+    var total = 3; 
+    var time; 
+    function imageChanger() { time=setTimeout("change()", 5000); 
+    function changeImage() { current++;}
+    if(current > total) currPic=1;
+    document.getElementById("image").src="images/website_image"+current+".jpg";
+    setupPicChange(); }
+  </script>
 </head>
 
-<body>
+<body onLoad="imageChanger();">
   <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
@@ -21,13 +31,13 @@
                 <name> Vineet Rao</name>
               </p>
               <p> 
-                I am a first year Master's student at University of Michigan, majoring in Signal, Image Processing and Machine learning. My courses and career aspirations are aligned towards Computer Vision. 
+                I am a first year Master's student at University of Michigan, majoring in Signal, Image Processing and Machine learning. My courses and career aspirations are both aligned in intersection Computer Vision and Machine Learning. 
               </p>
               <p>
-                Prior to joining UMich, I completed my undergraduate degree in Electronics and Communication Engineering with a minor in Computer Science Engineering at PES University, Bengaluru.  
+                Prior to joining UMich, I completed my undergraduate degree majoring in Electronics and Communication Engineering with a minor in Computer Science Engineering at PES University, Bengaluru.  
               </p>
               <p>
-                If your interests align with mine. Please feel free to contact me through my email. 
+                Please feel free to contact me through my email if you want to chat about general trends in AI. 
               </p>
               <p style="text-align:center">
                 <a href="mailto:kemmannu@umich.edu">Email</a> &nbsp/&nbsp
@@ -37,7 +47,7 @@
               </p>
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/website_image.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/website_image.jpg" class="hoverZoomLink"></a>
+              <a href="images/website_image.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/website_image1.jpg" class="hoverZoomLink"></a>
             </td>
           </tr>
         </tbody></table>
@@ -46,7 +56,7 @@
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>Research</heading>
               <p>
-                 I'm broadly interested in Computer Vision, Machine Learning and Deep Learning. My current research interest involves using language vision pre-trained models to improve downstream vision tasks and using self-supervised representation learning to solve vision tasks.
+                 I'm broadly interested in Computer Vision, Machine Learning and Deep Learning. My current research interest involves using language supervised pre-training to solve downstream vision tasks and using self-supervised representation learning to solve vision tasks of classification and detection.
               </p>
             </td>
           </tr>
@@ -56,7 +66,7 @@
           <td style="padding:20px;width:100%;vertical-align:middle">
             <heading>Projects</heading>
             <p>
-               Here are some of the projects that I have been working on :)
+               Here are some of the projects that I have been working on :-)
             </p>
           </td>
           </tr>
@@ -73,8 +83,9 @@
               <em>EECS 545 Course Project </em>, Supervisor :<a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>
               <br>
               <p>Our novel proposed method drastically reduces the need of human supervision required for training an Object Detector.</p> 
-              <P>We leverage a language supervised pre-trained model that is trained to output diverse captions and perform a Zero-Shot transfer using Prompt Engineering methods to localize an object given an image and draw a bounding box around it using GradCAM technique.</P>
-              <p>Further, we train a Fully Convolution Single Stage Object Detector (FCOS) using new small modified verison of GioU loss to account for the noise in the generated bounding boxes. We verify our techniques on Pascal-VOC dataset. </p>
+              <P>We leverage a language supervised pre-trained model (VirTex-v2) (bi-directional captioning model) that is trained to output diverse captions to obtain semantic information of the given input image. </P>
+              <p>Further, we do a Zero-Shot transfer using prompt engineering methods to get a "words of interest". Using these word of interest we use a GradCam technique to localize an object given an image and draw a bounding box around it.Thus we create pseudo label and pseudo bounding boxes that act as supervision signals for the object Detector</p>
+              <p>Finally, we train a Fully Convolution Single Stage Object Detector (FCOS) using new small modified verison of GioU loss to account for the noise in the generated pseudo bounding boxes. We verify our techniques on Pascal-VOC dataset. </p>
             </td>
           </tr>
         </tbody></table>
