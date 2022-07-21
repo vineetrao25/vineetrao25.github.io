@@ -14,7 +14,7 @@
     var time; 
     function imageChanger() { time=setTimeout("change()", 5000); 
     function changeImage() { current++;}
-    if(current > total) currPic=1;
+    if(current > total) current=1;
     document.getElementById("image").src="images/website_image"+current+".jpg";
     setupPicChange(); }
   </script>
@@ -84,11 +84,11 @@
               <br>
               <a href="data/EECS545Report_Resume.pdf">Report</a>
               /
-              <a href="data/Blue_background_horizontal.pptx.pdf">poster</a>
+              <a href="data/Blue_background_horizontal.pptx.pdf">Poster</a>
               <br>
               <p>Our novel proposed method drastically reduces the need of human supervision required for training an Object Detector.</p> 
-              <P>We leverage a language supervised pre-trained model (VirTex-v2) (bi-directional captioning model) that is trained to output diverse captions to obtain semantic information of the given input image. </P>
-              <p>Further, we do a Zero-Shot transfer using prompt engineering methods to get a "words of interest". Using these word of interest we use a GradCam technique to localize an object given an image and draw a bounding box around it.Thus we create pseudo label and pseudo bounding boxes that act as supervision signals for the object Detector</p>
+              <P>We leverage a language supervised pre-trained model (VirTex-v2) (bi-directional captioning model) that outputs set of diverse captions given an image. </P>
+              <p>Further, we do a Zero-Shot transfer using prompt engineering and ensembling methods to get a "words of interest" from the captions generated. Using these "words of interest", we use  Gradient Class Activation Maps to localize an object given an image and draw a bounding box around it.Thus, we create pseudo label and pseudo bounding boxes that act as supervision to train the Object Detector</p>
               <p>Finally, we train a Fully Convolution Single Stage Object Detector (FCOS) using new small modified verison of GioU loss to account for the noise in the generated pseudo bounding boxes. We verify our techniques on Pascal-VOC dataset. </p>
             </td>
           </tr>
@@ -131,7 +131,7 @@
               <a href="data/EECS598001Repost_Website.pdf">Report</a>
               <br>
               <p>Developed a 8-bit Quantized Flexible Winograd based Convolutional Engine in verilog for decreased inference time and model size. Simulated the entire inference cycle of a CNN in MATLAB</p> 
-              <P>Investigaed and implemented various Quantization techniques used in tinyML to reduce the model complexity.</P>
+              <P>Investigated and implemented various Quantization techniques used in tinyML to reduce the model complexity.</P>
             </td>
           </tr>
         </tbody></table>
