@@ -88,7 +88,7 @@
               <br>
               <p>Our novel proposed method drastically reduces the need of human supervision required for training an Object Detector.</p> 
               <P>We leverage a language supervised pre-trained model (VirTex-v2) (bi-directional captioning model) that outputs set of diverse captions given an image. </P>
-              <p>Further, we do a Zero-Shot transfer using prompt engineering and ensembling methods to get a "words of interest" from the captions generated. Using these "words of interest", we use  Gradient Class Activation Maps to localize an object given an image and draw a bounding box around it.Thus, we create pseudo label and pseudo bounding boxes that act as supervision to train the Object Detector</p>
+              <p>Further, we do a zero-shot transfer using prompt engineering and ensembling methods to get a set of "words of interest" from the generated captions. Using these "words of interest", we use  Gradient Class Activation Maps to localize an object given an image and draw a bounding box around it.Thus, we create pseudo label and pseudo bounding boxes that act as supervision to train the Object Detector</p>
               <p>Finally, we train a Fully Convolution Single Stage Object Detector (FCOS) using new small modified verison of GioU loss to account for the noise in the generated pseudo bounding boxes. We verify our techniques on Pascal-VOC dataset. </p>
             </td>
           </tr>
