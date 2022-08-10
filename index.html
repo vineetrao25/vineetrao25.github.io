@@ -87,9 +87,10 @@
               <a href="data/Blue_background_horizontal.pptx.pdf">Poster</a>
               <br>
               <p>Our novel proposed method drastically reduces the need of human supervision required for training an Object Detector.</p> 
-              <P>We leverage a language supervised pre-trained model (VirTex-v2) (bi-directional captioning model) that outputs set of diverse captions given an image. </P>
-              <p>Further, we do a zero-shot transfer using prompt engineering and ensembling methods to get a set of "words of interest" from the generated captions. Using these "words of interest", we use  Gradient Class Activation Maps to localize an object given an image and draw a bounding box around it.Thus, we create pseudo label and pseudo bounding boxes that act as supervision to train the Object Detector</p>
-              <p>Finally, we train a Fully Convolution Single Stage Object Detector (FCOS) using new small modified verison of GioU loss to account for the noise in the generated pseudo bounding boxes. We verify our techniques on Pascal-VOC dataset. </p>
+              <P>Leverage a language supervised pre-trained bi-directional captioning model (VirTex-v2) that outputs set of diverse captions given an image. </P>
+              <p>Further, zero-shot transfered using prompt engineering and then filter using noun and target extraction modules to get a set of "words of interest" from the generated captions.</p>
+              <p>Using these "words of interest",used Gradient Class Activation Maps to localize an object given an image and draw a bounding box around it. Thus, creating pseudo label and pseudo bounding boxes that act as supervision to train the Object Detector</p>
+              <p>Finally,trained a Fully Convolution Single Stage Object Detector (FCOS) using new small modified verison of GioU loss to account for the noise in the generated pseudo bounding boxes. We verify our techniques on Pascal-VOC dataset. </p>
             </td>
           </tr>
         </tbody></table>
@@ -110,9 +111,9 @@
               <br>
               <a href="data/EECS598Report_Website.pdf">Report</a>
               <br>
-              <p>Project aimed to show that Pretrained Language Supervision works well for fine grained downstream classification of food vision task using Food-101 dataset. </p> 
-              <P>We Pre-Train a bi-directional captioning model VirTex-v2 trained on subsampled RedCaps dataset. Further, Using Prompt Engineering and ensembling methods we perform various evaluations.</P>
-              <p>With the limited time and hardware resource we had, Our best model acheived 20 % zero shot accuracy on the test-set.</p>
+              <p>Subsampled RedCaps dataset from sub-reddits pertinent to food. Our dataset is unique and contains image-caption pairs from reddit from 2020 - 04/2022</p>
+              <p>Pre-trained a bi-directional image captioning model using RegNeX-800MF as feature extractor for image and 2 encoder-decoder transformer layer to learn semantic representations from the captions using the subsampled dataset </p> 
+              <P>With limited hardware resources,our best model acheived 20 % zero shot accuracy on the test-set. </P>
             </td>
           </tr>
         </tbody></table>
