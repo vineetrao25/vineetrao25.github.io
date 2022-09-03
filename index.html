@@ -13,7 +13,7 @@
     var current = 1; 
     var total = 3; 
     var time; 
-    function imageChanger() { time=setTimeout("change()", 500); 
+    function imageChanger() { time=setTimeout(imageChanger(), 1000); 
     current =current+1;
     if(current > total) current=1;
     document.getElementById("image").src="images/website_image"+current+".jpg";
