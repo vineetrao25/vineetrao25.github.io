@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<link rel="shortcut icon" href="https://umich.edu/favicon.ico"/>
   
+  <!----
   <script type="text/javascript">
     var current = 1; 
     var total = 3; 
@@ -17,11 +18,26 @@
     current =current+1;
     if(current > total) current=1;
     document.getElementById("image").src="images/website_image"+current+".jpg";
-     }
+     }  
   </script>
+--> 
+<script type="text/javascript">
+window.onload = function() {
+  var image = document.getElementById("img");
+
+  function updateImage() {
+      var min=1; 
+      var max=3; 
+      const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+      image.src = "images/website_image"+random+".jpg"+ "?" + new Date().getTime();
+  }
+  setInterval(updateImage, 1000);
+}
+</script>
+
 </head>
 
-<body onLoad="imageChanger()">
+<body>
   <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
@@ -48,7 +64,7 @@
               </p>
             </td>
             <td style="padding:2.5%;width:30%;max-width:40%">
-              <a href="images/website_image1.jpg"><img style="width:80%;max-width:100%" alt="profile photo" src="images/website_image1.jpg" class="hoverZoomLink" id="image"> </a>
+              <a href="images/website_image1.jpg"><img style="width:80%;max-width:100%" alt="profile photo" src="images/website_image1.jpg" class="hoverZoomLink" id="img"> </a>
               <a href="images/amazon_intern.png"><img style="width:80%;max-width:100%" alt="profile photo" src="images/amazon_intern.png" class="hoverZoomLink"></a>
             </td>
             
