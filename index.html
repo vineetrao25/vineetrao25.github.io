@@ -29,7 +29,7 @@ window.onload = function() {
       var min=1; 
       var max=3; 
       const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-      image.src = "images/website_image"+random+".jpg"+ "?" + new Date().getTime();
+      image.src = "images/website_image"+random+".jpg";
   }
   setInterval(updateImage, 1000);
 }
