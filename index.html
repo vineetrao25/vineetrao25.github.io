@@ -24,14 +24,15 @@
 <script type="text/javascript">
 window.onload = function() {
   var image = document.getElementById("img");
+  var num=1
 
   function updateImage() {
       var min=1; 
       var max=3; 
-      const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-      image.src = "images/website_image"+random+".jpg";
+      num =num+1
+      image.src = "images/website_image"+num+".jpg";
   }
-  setInterval(updateImage, 1000);
+  setInterval(updateImage, 5000);
 }
 </script>
 
