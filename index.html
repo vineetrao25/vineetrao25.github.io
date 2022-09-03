@@ -25,14 +25,14 @@
 window.onload = function() {
   var image = document.getElementById("img");
   var num=1
+  var total=3; 
 
   function updateImage() {
-      var min=1; 
-      var max=3; 
-      num =num+1
+      num =num+1 
+      if (num >total) {num=1} 
       image.src = "images/website_image"+num+".jpg";
   }
-  setInterval(updateImage, 5000);
+  setInterval(updateImage, 10000);
 }
 </script>
 
