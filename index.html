@@ -13,14 +13,14 @@
 window.onload = function() {
   var image = document.getElementById("img");
   var num=1
-  var total=5; 
+  var total=4; 
 
   function updateImage() {
       num =num+1 
       if (num >total) {num=1} 
       image.src = "images/website_image"+num+".jpg";
   }
-  setInterval(updateImage, 6000);
+  setInterval(updateImage, 10000);
 }
 </script>
 
