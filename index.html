@@ -14,11 +14,16 @@ window.onload = function() {
   var image = document.getElementById("img");
   var num=1
   var total=5; 
+  var imageWidth = 3024; 
+  var imageHeight = 4032; 
 
   function updateImage() {
       num =num+1 
       if (num >total) {num=1} 
       image.src = "images/website_image"+ num +".jpg";
+      
+      image.style.width = imageWidth + "px";
+      image.style.height = imageHeight + "px";
   }
   setInterval(updateImage, 10000);
 }
