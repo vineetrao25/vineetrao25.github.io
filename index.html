@@ -14,13 +14,13 @@ window.onload = function() {
   var image = document.getElementById("img");
   var num=1
   var total=5; 
-  var imageWidth = 300; 
+  var imageWidth = 225; 
   var imageHeight = 300; 
 
   function updateImage() {
       num =num+1 
       if (num >total) {num=1} 
-      image.src = "images/website_image"+ num +".jpg";
+      image.src = "images/website_images/website_image"+ num +".jpg";
       
       image.style.width = imageWidth + "px";
       image.style.height = imageHeight + "px";
@@ -39,19 +39,19 @@ window.onload = function() {
           <tr style="padding:0px">
             <td style="padding:2.5%;width:63%;vertical-align:middle">
               <p style="text-align:center">
-                <name>Vineet Rao</name>
+                <name> K Vineet Venkatesh Rao</name>
               </p>
               <p> 
-                Hi! I am an Master's graduate in Electrical Engineering and Computer Science from the University of Michigan, where I specialized in Signal, Image Processing, and Machine Learning. I am passionate about leveraging cutting-edge technology to create a meaningful and positive impact on the world.
+                Hi! I am an Master's graduate in Electrical Engineering and Computer Science from University of Michigan Ann Arbor, where I specialized in Signal, Image Processing, and Machine Learning. I am passionate about leveraging cutting-edge technology to create a meaningful and positive impact on the world.
               </p>
               <p>
                 I obtained my undergraduate degree in Electronics and Communication Engineering, complemented by a minor in Computer Science, from PES University in 2020. My educational background, combined with my courses at the University of Michigan, have helped me develop a strong foundation in computer vision and machine learning.  
               </p>
               <p>
-                If you share the same ardor for technology and innovation, I would love to connect with you. Whether it's exploring potential research collaborations or simply engaging in insightful conversations about the latest advancements in our field, I kindly welcome you to get in touch with me. 
+                If you have a similar passion for technology and innovation, I'd love to connect with you. Whether we explore potential research collaborations or simply engage in insightful conversations about the latest advancements in our field, feel free to get in touch with me. 
               </p>
               <p>
-                Feel free to say hi at : <b>kemmannu at umich dot edu</b>
+                Feel free to say hi at : <b><i>kemmannu<i> at umich dot edu</b>
               </p>
               <p style="text-align:center">
                 <a href="data/Resume.pdf">CV</a> &nbsp/&nbsp
@@ -60,10 +60,18 @@ window.onload = function() {
               </p>
             </td>
             <td style="padding:2.5%;width:30%;max-width:40%">
-              <a href="images/website_image1.jpg"><img width="300" height="300" style="width:80%;max-width:100%" alt="profile photo" src="images/website_image1.jpg" class="hoverZoomLink" id="img"> </a>
-              <a href="images/amazon_intern.png"><img style="width:80%;max-width:100%" alt="profile photo" src="images/amazon_intern.png" class="hoverZoomLink"></a>
+              <a href="images/website_images/website_image1.jpg"><img style="width:100% ;max-width:800px" alt="profile photo" src="images/website_images/website_image1.jpg" class="hoverZoomLink" id="img"> </a>
             </td>
             
+          </tr> 
+          <!-- Miniature logos row -->
+          <tr style="padding:0px">
+            <td colspan="1" style="text-align: center;">
+              <img style="width: 30%; max-width: 130px; margin: 5px;" alt="Amazon Intern Logo" src="images/logos/amazon_intern_logo.png">
+              <img style="width: 30%; max-width: 130px; margin: 5px;" width="300" alt="Amazon Lab126 Logo" src="images/logos/amazon_lab126_logo.png">
+              <img style="width: 30%; max-width: 100px; margin: 5px;" alt="Umich Logo" src="images/logos/um_logo.png">
+              <img style="width: 30%; max-width: 130px; margin: 5px;" alt="PES University Logo" src="images/logos/pesu_logo.png">
+            </td>
           </tr>
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -71,7 +79,14 @@ window.onload = function() {
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>Research</heading>
               <p>
-                 I'm broadly interested in Computer Vision, Machine Learning, Deep Learning and NLP. My current research interests are in Self-Supervised representational learning, leveraging multi-modal pretraining (particularly language supervised pretraining) to solve down-stream vision tasks of classification and detection.
+                 I'm broadly interested in intersection Computer Vision, Deep Learning and NLP.  I am particularly interested in exploring self-supervised representational learning methods, utilizing multi-modal pretraining, especially language supervised pretraining, to address challenging vision tasks such as classification and detection. 
+              </p> 
+              <papertitle> Research Associate — Prof. Justin Johnson's AI Lab  &nbsp; (JAIL) </papertitle> 
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Aug. 2022 - Apr 2023  
+              <p>
+                Developing a novel training recipe for open vocabulary instance segmentation without the need for aligned data, inspired by the distinct ”what” and ”where” pathways observed in the human visual system (working towards
+                submission for <b>ICLR 2024</b>)
               </p>
             </td>
           </tr>
@@ -84,18 +99,19 @@ window.onload = function() {
             <heading>Experience</heading>
             <br>
             <br>
-            <span class="highlight">
-              <papertitle>Applied Scientist Intern at Amazon Lab 126 </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   May 2022 - Aug 2022
-              </papertitle>  
-            
+            <papertitle>Applied Scientist Intern at Amazon Lab 126 </papertitle>  
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   May 2022 - Aug 2022
               <br>
-              <em>Sunnyvale, CA </em>, Manager:<a href="https://www.linkedin.com/in/prasadshamain/">Prasad Shamain</a>               <br>
-              <p>Researched, colloborated and implemented a privacy centric Deep Learning based solution for a complex problem involving radar inputs that intersected with a particular Amazon V0 product (cannot disclose due to confidentiality).</p> 
-              <P>Designed and implemented a Computer Vision based Ground Truth system, Data-Collection pipeline and synchronization, and also investiaged various deep learning methods for the Radar Based System and came up with the data-points in deciding which one to use given the resource constraints. </P>
-              <p>Presented the project to the team director and it receievd a green-light to be continued as a NTI. </p>
-              <p>Also learned peculiar "Amazon Leadership Principles", interacted with several managers and scientists outside my team to learn on how to come up with a suitable metrics through literature survey given a vague problem statement.</p>
-              <p>Most importantly, I was able to learn pitfalls that might occur in designing a consumer based product and the steps taken to mitigate them through interaction with my skip-managers and team members. </p>
-          </td>
+              <em>Sunnyvale, CA </em>, Manager:<a href="https://www.linkedin.com/in/prasadshamain/">Prasad Shamain</a>               
+              <br>
+              <p>
+                Conducted research, collaboration, and implementation of a privacy-focused Deep Learning solution for a complex problem involving radar inputs for a specific Amazon product
+              </p>  
+              <p>
+                Designed and implemented a Computer Vision Ground Truth system, Data-Collection pipeline, and synchronization, while exploring different deep learning methods for a Radar Based System, considering resource constraints and providing key insights for decision-making
+              </p>
+
+          </td> 
           </tr>
         </tbody></table> 
 
@@ -114,7 +130,7 @@ window.onload = function() {
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/SSL-BlockDiagram.png" alt="SSL Object Detector" width="200" height="120" style="border-style: none">
+              <img src="images/project_images/ml_project.png" alt="SSL Object Detector" width="200" height="120" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
                 <papertitle>Self-Supervised Object Detection with Multimodal Image Captioning</papertitle>
@@ -140,7 +156,7 @@ window.onload = function() {
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/Inference_cap2.png" alt="Fine-grained Food Classification" width="200" height="120" style="border-style: none">
+              <img src="images/project_images/dlcv_project.png" alt="Fine-grained Food Classification" width="200" height="120" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
                 <papertitle>Language Supervised Vision Pre-Training for Fine-grained Food Classification </papertitle>
@@ -161,7 +177,7 @@ window.onload = function() {
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/Winograd.png" alt="Fine-grained Food Classification" width="200" height="120" style="border-style: none">
+              <img src="images/project_images/ml_vlsi.png" alt="Fine-grained Food Classification" width="200" height="120" style="border-style: none">
             </td>
             <td width="75%" valign="middle">
                 <papertitle>Quantized Winograd Convolution based accerlator for Convolutional Neural Networks  </papertitle>
@@ -178,6 +194,58 @@ window.onload = function() {
       </td>
     </tr>
   </table>
+
+
+
+<table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <tr style="padding:0px">
+    <td style="padding:0px">
+
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
+          <tr>
+            <td>
+              <heading>Teaching</heading>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tr>
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <img src="images/logos/um_logo.png" alt="cs188" width="128">
+          </td>
+          <td width="75%" valign="center">
+            Graduate Student Instructor 
+            <br>
+            <br>
+            <a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-452/">EECS 452:  Digital Signal Processing Laboratory</a> (Fall 2022), <a href="https://www.birds.eecs.umich.edu/"> Prof. Shai Revzen </a>
+            <br>
+            <br>
+          </td>
+        </tr>
+      </tbody></table>
+
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <img src="images/logos/um_logo.png" alt="cs188" width="128">
+          </td>
+          <td width="75%" valign="center">
+            Graduate Student Instructor 
+            <br>
+            <br>
+            <a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-452/">EECS 452:  Digital Signal Processing Laboratory</a> (Winter 2023), <a href="https://arsarabi.github.io/"> Prof. Armin Sarabi </a>
+            <br>
+            <br>
+          </td>
+        </tr>
+      </tbody></table>
+    </td> 
+  </tr> 
+</table>  
+
   Website style borrowed from  <a href="https://jonbarron.info/">here</a>.
 </body> 
 </html>

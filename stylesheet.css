@@ -129,3 +129,25 @@ name {
 span.highlight {
   background-color: #ffffd0;
 }
+
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.image-container {
+  width: 300px; /* Adjust this to set the width of each image container */
+  height: 300px; /* Adjust this to set the height of each image container */
+  margin: 10px; /* Adjust this to set the margin between image containers */
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Add more CSS styling as needed */
