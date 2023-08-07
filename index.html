@@ -137,21 +137,66 @@ window.onload = function() {
               <br>
               <em>EECS 545 Course Project </em>, Supervisor :<a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>
               <br>
-              <a href="data/EECS545Report_Resume.pdf">Report</a>
+              <a href="data/eecs545_report.pdf">Report</a>
               /
-              <a href="data/Blue_background_horizontal.pptx.pdf">Poster</a>
+              <a href="data/eecs545_poster.pdf">Poster</a>
               <br>
-              <p>Our novel proposed method drastically reduces the need of human supervision required for training an Object Detector.</p> 
-              <P>Leveraged a language supervised pre-trained bi-directional captioning model (VirTex-v2) that outputs set of diverse captions given an image. </P>
-              <p>Further, zero-shot transfered using prompt engineering and then filtered using noun and target extraction modules to get a set of "words of interest" from the generated captions.</p>
-              <p>Using these "words of interest", utilized Gradient Class Activation Maps to localize an object given an image and draw a bounding box around it. Thus, creating a pseudo label and pseudo bounding boxes that act as supervision to train the Object Detector.</p>
-              <p>Finally, trained a Fully Convolution Single Stage Object Detector (FCOS) using new small modified verison of GioU loss to account for the noise in the generated pseudo bounding boxes. We verify our techniques on Pascal-VOC dataset. </p>
+              <p>Our novel proposed method drastically reduces the need for human supervision required for training an Object Detector. We leveraged a language supervised pre-trained bi-directional captioning model (VirTex-v2) that outputs a set of diverse captions given an image.</p> 
+              <p>Further, we performed zero-shot transfer using prompt engineering and then filtered the results using noun and target extraction modules to obtain a set of "words of interest" from the generated captions. With these "words of interest," we utilized Gradient Class Activation Maps to localize an object within an image and draw a bounding box around it. This created pseudo labels and pseudo bounding boxes that acted as supervision to train the Object Detector.</p>
+              <p>Finally, we trained a Fully Convolution Single Stage Object Detector (FCOS) using a new small modified version of GioU loss to account for the noise in the generated pseudo bounding boxes. Our techniques were verified on the Pascal-VOC dataset.</p>
             </td>
           </tr>
         </tbody></table>
+        <br>
+        <br>
 
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/project_images/ml_project.png" alt="SSL Object Detector" width="200" height="120" style="border-style: none">
+            </td>
+            <td width="75%" valign="middle">
+                <papertitle>MC - VQA Using Customized Prompts </papertitle>
+              <br>
+              <em>EECS 595 Course Project </em>, Supervisor :<a href="https://web.eecs.umich.edu/~chaijy/">Prof. Joyce Chai</a>
+              <br>
+              <a href="data/eecs595_report.pdf">Report</a>
+              <br>
+              <p> In this course project, we developed a novel pipeline to perform zero-shot Visual Question Answering (VQA) by combining large pre-trained models, such as CLIP and the T-5 transformer. </p>  
+              <p> Our approach involved converting questions into declarative statements and leveraging them alongside images and multiple-choice answers to perform zero-shot VQA using CLIP.</p>
+              <p> Our pipeline achieved an impressive total accuracy of 49.5%, which is comparable to the state-of-the-art (SOTA) performance in zero-shot VQA and outperformed the previous SOTA in this task. This success demonstrates the effectiveness of our customized prompts and the potential of large pre-trained models for zero-shot VQA.</p>
+            </td>
+          </tr>
+        </tbody></table>
+        <br>
+        <br> 
+
+
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/project_images/ml_project.png" alt="SSL Object Detector" width="200" height="120" style="border-style: none">
+            </td>
+            <td width="75%" valign="middle">
+                <papertitle>ToddlerNet: Exploring Data Diversity versus View Diversity</papertitle>
+              <br>
+              <em>EECS 598 : Action and Perception Course Project </em>, Supervisor :<a href="https://web.eecs.umich.edu/~stellayu/">Dr. Stella Yu </a>
+              <br>
+              <a href="data/eecs598_008_report.pdf">Report</a>
+              <br>
+              <p> This course project focused on the exploration of data diversity versus view diversity in representation learning using the novel approach named ToddlerNet. Inspired by physological concepts by Dr. Linda Smith, we aimed to leverage insights from infant perception research to enhance deep learning models. </p>  
+              <p>Our investigation primarily centered on understanding the significance of data statistics resembling infants' everyday environment in improving object recognition across different contexts and viewpoints. ToddlerNet demonstrated promising results by training algorithms on data exhibiting infants' perceptual experiences, leading to a more robust recognition of objects under various viewing conditions.</p> 
+              <p>Additionally, we explored optimal learning objectives and discovered that pre-training with a supervised contrastive learning objective on view-diverse data yielded superior results in ToddlerNet's performance. This finding showcases the potential of leveraging view diversity in representation learning for enhanced object recognition capabilities.
+          
+            </td>
+          </tr>
+        </tbody></table>
         <br>
         <br>
+
+
+
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
@@ -164,11 +209,11 @@ window.onload = function() {
               <br>
               <em>EECS 598 Course Mini-Project </em>, Supervisor :<a href="https://web.eecs.umich.edu/~justincj/">Justin Johnson</a>
               <br>
-              <a href="data/EECS598Report_Website.pdf">Report</a>
+              <a href="data/eecs598_report.pdf">Report</a>
               <br>
-              <p>Subsampled RedCaps dataset from sub-reddits pertinent to food. Our dataset is unique and contains image-caption pairs from manually curated food related sub-reddits from 04/2020 - 04/2022.</p>
-              <p>Pre-trained a bi-directional image captioning model using RegNeX-800MF as feature extractor for image and 2 encoder-decoder transformer layer to learn semantic representations from the captions using our subsampled dataset.</p> 
-              <P>With limited hardware resources, our best model acheived 20 % zero shot accuracy on the test-set of Food-101 dataset. </P>
+              <p>For this research project, we compiled a unique and curated dataset, referred to as "SubRedCaps," consisting of image-caption pairs extracted from sub-reddits specifically related to food. The dataset spans the time period from April 2020 to April 2022.</p>
+              <p> To enable our study of food image captioning, we pre-trained a bi-directional image captioning model using RegNeX-800MF as the feature extractor for the images. Additionally, we utilized a two-layer encoder-decoder transformer architecture to learn rich semantic representations from the captions, leveraging our subsampled SubRedCaps dataset.</p>
+              <p>Despite working with limited hardware resources, our best model achieved a remarkable 20% zero-shot accuracy on the test-set of the challenging Food-101 dataset. This noteworthy result demonstrates the efficacy of our approach in generating accurate captions for food-related images.</p>
             </td>
           </tr>
         </tbody></table>
@@ -184,10 +229,10 @@ window.onload = function() {
               <br>
               <em>EECS 598 Course Project </em>, Supervisor :<a href="https://kim.engin.umich.edu/">Hun-Seok Kim</a>
               <br>
-              <a href="data/EECS598001Repost_Website.pdf">Report</a>
+              <a href="data/eecs598_001_report.pdf">Report</a>
               <br>
-              <p>Developed a 8-bit Quantized Flexible Winograd based Convolutional Engine in verilog for decreased inference time and model size. Simulated the entire inference cycle of a CNN in MATLAB</p> 
-              <P>Investigated and implemented various Quantization techniques used in tinyML to reduce the model complexity.</P>
+              <p>We designed and developed an 8-bit quantized flexible Winograd-based convolutional engine in Verilog to achieve decreased inference time and model size for Convolutional Neural Networks (CNNs). To validate the design, we conducted simulations of the entire inference cycle of a CNN using MATLAB.</p> 
+              <p>Our investigation primarily focused on exploring and implementing various quantization techniques widely used in tinyML (Tiny Machine Learning) to effectively reduce model complexity while preserving accuracy.</p>
             </td>
           </tr>
         </tbody></table>
