@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <title>Kemmannu Vineet Venkatesh Rao</title>
+  <title>Vineet Rao</title>
   
-  <meta name="author" content="Kemmannu Vineet Venkatesh Rao">
+  <meta name="author" content="Vineet Rao">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -12,20 +12,47 @@
 <script type="text/javascript">
 window.onload = function() {
   var image = document.getElementById("img");
+  var bust = "?t=" + Date.now();  // cache-buster so the browser always loads the fresh images
+  image.src = "images/website_images/website_image1.jpg" + bust;
   var num=1
-  var total=5; 
+  var total=9; 
   var imageWidth = 325; 
   var imageHeight = 400; 
 
   function updateImage() {
       num =num+1 
       if (num >total) {num=1} 
-      image.src = "images/website_images/website_image"+ num +".jpg";
+      image.src = "images/website_images/website_image"+ num +".jpg" + bust;
       
-      image.style.width = imageWidth + "px";
-      image.style.height = imageHeight + "px";
+      // image sizing is handled by CSS now (keeps it responsive)
   }
   setInterval(updateImage, 10000);
+
+  // click-to-reveal email (blurred until the visitor clicks it)
+  var email = document.getElementById("email");
+  if (email) {
+    email.addEventListener("click", function reveal() {
+      var addr = (email.getAttribute("data-user") || "") + "@" + (email.getAttribute("data-domain") || "");
+      email.innerHTML = '<a href="mailto:' + addr + '">' + addr + '</a>';
+      email.classList.add("revealed");
+      email.removeEventListener("click", reveal);
+    });
+  }
+
+  // Work section: alternate each card's video between its two clips
+  var workVids = document.querySelectorAll('.work-video');
+  for (var wi = 0; wi < workVids.length; wi++) {
+    (function (v) {
+      var srcs = (v.getAttribute('data-srcs') || '').split(',');
+      var idx = 0;
+      v.addEventListener('ended', function () {
+        idx = (idx + 1) % srcs.length;
+        v.src = srcs[idx];
+        v.play().catch(function () {});
+      });
+      v.play().catch(function () {});
+    })(workVids[wi]);
+  }
 }
 </script>
 
@@ -37,36 +64,40 @@ window.onload = function() {
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name> K Vineet Venkatesh Rao</name>
-              </p>
-              <p> 
-                Hi! I am an Master's graduate in Electrical Engineering and Computer Science from University of Michigan Ann Arbor, where I specialized in Signal, Image Processing, and Machine Learning. I am passionate about leveraging cutting-edge technology to create a meaningful and positive impact on the world.
-              </p>
-              <p>
-                I obtained my undergraduate degree in Electronics and Communication Engineering, complemented by a minor in Computer Science, from PES University in 2020. My educational background, combined with my courses at the University of Michigan, have helped me develop a strong foundation in computer vision and machine learning.  
-              </p>
-              <p>
-                If you have a similar passion for technology and innovation, I'd love to connect with you. Whether we explore potential research collaborations or simply engage in insightful conversations about the latest advancements in our field, feel free to get in touch with me. 
-              </p>
-              <p>
-                Feel free to say hi at : <b><i>kemmannu<i> at umich dot edu</b>
-              </p>
-              <p style="text-align:center">
-                <a href="data/Resume.pdf">CV</a> &nbsp/&nbsp
-                <a href="https://twitter.com/vineetrao25">Twitter</a> &nbsp/&nbsp
-                <a href="https://github.com/vineetrao25/">Github</a>
-              </p>
+            <td colspan="2" style="text-align:center;padding:10px 0 26px;">
+              <name>Vineet Rao</name>
             </td>
-            <td style="padding:2.5%;width:30%;max-width:40%">
-              <a href="images/website_images/website_image1.jpg"><img width = "325" height = "400" alt="profile photo" src="images/website_images/website_image1.jpg" class="hoverZoomLink" id="img"> </a>
+          </tr>
+          <tr style="padding:0px">
+            <td style="width:330px;vertical-align:top;text-align:center;padding:0 24px 0 0;">
+              <a href="images/website_images/website_image1.jpg"><img alt="profile photo" src="images/website_images/website_image1.jpg" class="hoverZoomLink" id="img"></a>
+              <div class="social">
+                <a href="data/vineet_resume_2026.pdf" title="CV" aria-label="CV">CV</a>
+                <a href="https://github.com/vineetrao25/" title="GitHub" aria-label="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 012-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+                <a href="https://www.linkedin.com/in/vineet-rao-b4137773/" title="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.6v2.05h.05c.5-.95 1.72-1.95 3.55-1.95 3.8 0 4.5 2.5 4.5 5.75V23h-4v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.55 1.72-2.55 3.5V23h-4V8z"/></svg></a>
+                <a href="https://twitter.com/vineetrao25" title="X" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.5h3.68l-8.04 9.19L24 22.5h-7.4l-5.8-7.58-6.63 7.58H.49l8.6-9.83L0 1.5h7.59l5.24 6.93L18.9 1.5zm-1.29 18.8h2.04L6.49 3.6H4.3l13.31 16.7z"/></svg></a>
+              </div>
+            </td>
+            <td style="vertical-align:middle;">
+              <p> 
+                I'm a Research Engineer at Magna International, where I build perception and autonomy for self-driving robots. I love solving problems at the intersection of robotics and computer vision, and I especially enjoy the deployment-ready parts: data pipelines, ground-truth systems, and the long tail of edge cases that decide whether a robot actually works.
+              </p>
+              <p>
+                Lately, I'm most interested in using vision-language models (VLMs) and vision-language-action models (VLAs) to tackle those long-tail events.
+              </p>
+              <p>
+                I have a master's in Electrical and Computer Engineering from the University of Michigan, where I worked in Prof. Justin Johnson's lab on open-vocabulary segmentation and spent a summer at Amazon Lab126 building radar-based perception. My undergraduate degree is in Electronics and Communication Engineering, with a minor in Computer Science, from PES University.  
+              </p>
+              <p>
+                Feel free to say hi at :
+                <span id="email" class="email" title="click to reveal" data-user="kemmannu" data-domain="umich.edu"><b><i>kemmannu at umich dot edu</i></b></span>
+              </p>
             </td>
             
           </tr> 
           <!-- Miniature logos row -->
           <tr style="padding:0px">
-            <td colspan="1" style="text-align: center;">
+            <td colspan="2" style="text-align: center;">
               <img style="width: 30%; max-width: 130px; margin: 5px;" alt="Amazon Intern Logo" src="images/logos/amazon_intern_logo.png">
               <img style="width: 30%; max-width: 130px; margin: 5px;" width="300" alt="Amazon Lab126 Logo" src="images/logos/amazon_lab126_logo.png">
               <img style="width: 30%; max-width: 100px; margin: 5px;" alt="Umich Logo" src="images/logos/um_logo.png">
@@ -74,163 +105,125 @@ window.onload = function() {
             </td>
           </tr>
         </tbody></table>
+        <hr class="divider">
+
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-              <p>
-                 I'm broadly interested in intersection Computer Vision, Deep Learning and NLP.  I am particularly interested in exploring self-supervised representational learning methods, utilizing multi-modal pretraining, especially language supervised pretraining, to address challenging vision tasks such as classification and detection. 
-              </p> 
-              <papertitle> Research Associate — Prof. Justin Johnson's AI Lab  &nbsp; (JAIL) </papertitle> 
-
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Aug. 2022 - Apr 2023  
-              <p>
-                Developing a novel training recipe for open vocabulary instance segmentation without the need for aligned data, inspired by the distinct ”what” and ”where” pathways observed in the human visual system (working towards
-                submission for <b>ICLR 2024</b>)
-              </p>
+              <heading>Work</heading>
+              <div class="work-grid">
+                <div class="work-card">
+                  <div class="work-media">
+                    <video class="work-video" muted playsinline autoplay preload="metadata" poster="work_videos/lmdd_a.jpg" data-srcs="work_videos/lmdd_a.mp4,work_videos/lmdd_b.mp4,work_videos/lmdd_jeep.mp4,work_videos/lmdd_estop.mp4">
+                      <source src="work_videos/lmdd_a.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="work-title">L4 Autonomous Vehicle</div>
+                  <div class="work-desc">Developed the perception and localization stack for an L4 autonomous delivery robot deployed in Toronto, taking it from early-stage research to <b>90% autonomous operation on public roads</b>.</div>
+                </div>
+                <div class="work-card">
+                  <div class="work-media">
+                    <video class="work-video" muted playsinline autoplay preload="metadata" poster="work_videos/amr_a.jpg" data-srcs="work_videos/amr_a.mp4,work_videos/amr_b.mp4">
+                      <source src="work_videos/amr_a.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="work-title">AI-Driven Factory Automation</div>
+                  <div class="work-desc">Designing and building the autonomy stack and <b>Vision-Language-Action (VLA)</b> systems for Autonomous Mobile Robots (AMRs), supporting deployment of <b>144 robots across 14 factories</b> and saving <b>$5M annually</b>.</div>
+                </div>
+              </div>
             </td>
-          </tr>
-        </tbody></table>  
+            </tr>
+        </tbody></table>
 
-        
+                <hr class="divider">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
           <td style="padding:20px;width:100%;vertical-align:middle">
             <heading>Experience</heading>
-            <br>
-            <br>
-            <papertitle>Applied Scientist Intern at Amazon Lab 126 </papertitle>  
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   May 2022 - Aug 2022
-              <br>
-              <em>Sunnyvale, CA </em>, Manager:<a href="https://www.linkedin.com/in/prasadshamain/">Prasad Shamain</a>               
-              <br>
-              <p>
-                Conducted research, collaboration, and implementation of a privacy-focused Deep Learning solution for a complex problem involving radar inputs for a specific Amazon product
-              </p>  
-              <p>
-                Designed and implemented a Computer Vision Ground Truth system, Data-Collection pipeline, and synchronization, while exploring different deep learning methods for a Radar Based System, considering resource constraints and providing key insights for decision-making
-              </p>
-
-          </td> 
+            <div class="cv-list">
+              <div class="cv-entry">
+                <div class="cv-role">Research Engineer</div>
+                <div class="cv-where">Magna International, Troy, MI</div>
+                <div class="cv-date">Jun 2023 - Present</div>
+              </div>
+              <div class="cv-entry">
+                <div class="cv-role">Research Associate</div>
+                <div class="cv-where">Prof. Justin Johnson's AI Lab (JAIL), Ann Arbor, MI</div>
+                <div class="cv-date">Aug 2022 - Apr 2023</div>
+              </div>
+              <div class="cv-entry">
+                <div class="cv-role">Applied Scientist Intern</div>
+                <div class="cv-where">Amazon Lab126, Sunnyvale, CA</div>
+                <div class="cv-date">May 2022 - Aug 2022</div>
+              </div>
+            </div>
+          </td>
           </tr>
         </tbody></table> 
 
+                <hr class="divider">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
           <td style="padding:20px;width:100%;vertical-align:middle">
             <heading>Projects</heading>
-            <p>
-               Here are some of the projects that I have been working on :-)
-            </p>
+            <div class="pub-list">
+
+              <div class="pub">
+                <div class="pub-fig"><img src="images/project_images/proj_scam.png" alt="" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=&quot;pub-fig-ph&quot;>add a SCAM figure</div>'"></div>
+                <div>
+                  <div class="pub-title">SCAM: Segment and Classify Anything Model</div>
+                  <div class="pub-venue"><b>Prof. Justin Johnson's AI Lab (JAIL)</b>, mentored by <a href="https://karandes.ai/">Karan Desai</a></div>
+                  <div class="pub-desc">Integrates CLIP and SAM for open-vocabulary instance segmentation, improving COCO mAP by +7.5 AP and holding within 1 AP while using only 5% of the labels.</div>
+                </div>
+              </div>
+
+              <div class="pub">
+                <div class="pub-fig"><img src="images/project_images/proj_ssl.png" alt=""></div>
+                <div>
+                  <div class="pub-title">Self-Supervised Object Detection with Multimodal Image Captioning</div>
+                  <div class="pub-venue"><b>EECS 545</b>, advised by <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a> &nbsp;&nbsp; <a href="data/eecs545_report.pdf">report</a> &middot; <a href="data/eecs545_poster.pdf">poster</a></div>
+                  <div class="pub-desc">A self-supervised object detector that turns language-supervised image captions and Grad-CAM heatmaps into pseudo-labels, reducing its reliance on human annotation.</div>
+                </div>
+              </div>
+
+              <div class="pub">
+                <div class="pub-fig"><img src="images/project_images/proj_toddler.png" alt=""></div>
+                <div>
+                  <div class="pub-title">ToddlerNet: Data Diversity vs. View Diversity</div>
+                  <div class="pub-venue"><b>EECS 598: Action &amp; Perception</b>, advised by <a href="https://web.eecs.umich.edu/~stellayu/">Stella Yu</a> &nbsp;&nbsp; <a href="data/eecs598_008_report.pdf">report</a></div>
+                  <div class="pub-desc">Inspired by how toddlers learn, it asks whether representation learning gains more from data diversity or view diversity, and finds that supervised-contrastive pre-training on view-diverse data generalizes best across viewpoints.</div>
+                </div>
+              </div>
+
+              <div class="pub">
+                <div class="pub-fig"><img src="images/project_images/proj_vqa.png" alt=""></div>
+                <div>
+                  <div class="pub-title">MC-VQA using Customized Prompts</div>
+                  <div class="pub-venue"><b>EECS 595</b>, advised by <a href="https://web.eecs.umich.edu/~chaijy/">Joyce Chai</a> &nbsp;&nbsp; <a href="data/eecs595_report.pdf">report</a></div>
+                  <div class="pub-desc">A training-free, zero-shot visual question answering pipeline that rewrites questions as declarative prompts for CLIP, matching state-of-the-art accuracy.</div>
+                </div>
+              </div>
+
+              <div class="pub">
+                <div class="pub-fig"><img src="images/project_images/proj_food.png" alt=""></div>
+                <div>
+                  <div class="pub-title">Language-Supervised Pre-Training for Fine-Grained Food Classification</div>
+                  <div class="pub-venue"><b>EECS 598: Deep Learning for CV</b>, advised by <a href="https://web.eecs.umich.edu/~justincj/">Justin Johnson</a> &nbsp;&nbsp; <a href="data/eecs598_report.pdf">report</a></div>
+                  <div class="pub-desc">Pre-trains a bi-directional captioning model on a curated Reddit food dataset (SubRedCaps) for zero-shot, fine-grained food classification on Food-101.</div>
+                </div>
+              </div>
+
+              <div class="pub">
+                <div class="pub-fig"><img src="images/project_images/proj_winograd.png" alt=""></div>
+                <div>
+                  <div class="pub-title">Quantized Winograd Convolution Accelerator for CNNs</div>
+                  <div class="pub-venue"><b>EECS 598: VLSI</b>, advised by <a href="https://kim.engin.umich.edu/">Hun-Seok Kim</a> &nbsp;&nbsp; <a href="data/eecs598_001_report.pdf">report</a></div>
+                  <div class="pub-desc">An 8-bit quantized, flexible Winograd convolution engine in Verilog that accelerates CNN inference on low-power hardware with minimal accuracy loss.</div>
+                </div>
+              </div>
+
+            </div>
           </td>
-          </tr>
-        </tbody></table>
-
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/project_images/ml_project.png" alt="SSL Object Detector" width="200" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-                <papertitle>Self-Supervised Object Detection with Multimodal Image Captioning</papertitle>
-              <br>
-              <em>EECS 545 Course Project </em>, Supervisor :<a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>
-              <br>
-              <a href="data/eecs545_report.pdf">Report</a>
-              /
-              <a href="data/eecs545_poster.pdf">Poster</a>
-              <br>
-              <p>Our novel proposed method drastically reduces the need for human supervision required for training an Object Detector. We leveraged a language supervised pre-trained bi-directional captioning model (VirTex-v2) that outputs a set of diverse captions given an image.</p> 
-              <p>Further, we performed zero-shot transfer using prompt engineering and then filtered the results using noun and target extraction modules to obtain a set of "words of interest" from the generated captions. With these "words of interest," we utilized Gradient Class Activation Maps to localize an object within an image and draw a bounding box around it. This created pseudo labels and pseudo bounding boxes that acted as supervision to train the Object Detector.</p>
-              <p>Finally, we trained a Fully Convolution Single Stage Object Detector (FCOS) using a new small modified version of GioU loss to account for the noise in the generated pseudo bounding boxes. Our techniques were verified on the Pascal-VOC dataset.</p>
-            </td>
-          </tr>
-        </tbody></table>
-        <br>
-        <br>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/project_images/action_and_perception.png" alt="SSL Object Detector" width="200" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-                <papertitle>ToddlerNet: Exploring Data Diversity versus View Diversity</papertitle>
-              <br>
-              <em>EECS 598 : Action and Perception Course Project </em>, Supervisor :<a href="https://web.eecs.umich.edu/~stellayu/">Dr. Stella Yu </a>
-              <br>
-              <a href="data/eecs598_008_report.pdf">Report</a>
-              <br>
-              <p> This course project focused on the exploration of data diversity versus view diversity in representation learning using the novel approach named ToddlerNet. Inspired by physological concepts by Dr. Linda Smith, we aimed to leverage insights from infant perception research to enhance deep learning models. </p>  
-              <p>Our investigation primarily centered on understanding the significance of data statistics resembling infants' everyday environment in improving object recognition across different contexts and viewpoints. ToddlerNet demonstrated promising results by training algorithms on data exhibiting infants' perceptual experiences, leading to a more robust recognition of objects under various viewing conditions.</p> 
-              <p>Additionally, we explored optimal learning objectives and discovered that pre-training with a supervised contrastive learning objective on view-diverse data yielded superior results in ToddlerNet's performance. This finding showcases the potential of leveraging view diversity in representation learning for enhanced object recognition capabilities.
-          
-            </td>
-          </tr>
-        </tbody></table>
-        <br>
-        <br>
-
-
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/project_images/nlp_project.jpg" alt="SSL Object Detector" width="200" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-                <papertitle>MC - VQA Using Customized Prompts </papertitle>
-              <br>
-              <em>EECS 595 Course Project </em>, Supervisor :<a href="https://web.eecs.umich.edu/~chaijy/">Prof. Joyce Chai</a>
-              <br>
-              <a href="data/eecs595_report.pdf">Report</a>
-              <br>
-              <p> In this course project, we developed a novel pipeline to perform zero-shot Visual Question Answering (VQA) by combining large pre-trained models, such as CLIP and the T-5 transformer. </p>  
-              <p> Our approach involved converting questions into declarative statements and leveraging them alongside images and multiple-choice answers to perform zero-shot VQA using CLIP.</p>
-              <p> Our pipeline achieved an impressive total accuracy of 49.5%, which is comparable to the state-of-the-art (SOTA) performance in zero-shot VQA and outperformed the previous SOTA in this task. This success demonstrates the effectiveness of our customized prompts and the potential of large pre-trained models for zero-shot VQA.</p>
-            </td>
-          </tr>
-        </tbody></table>
-        <br>
-        <br> 
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/project_images/dlcv_project.png" alt="Fine-grained Food Classification" width="200" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-                <papertitle>Language Supervised Vision Pre-Training for Fine-grained Food Classification </papertitle>
-              
-              <br>
-              <em>EECS 598 Course Mini-Project </em>, Supervisor :<a href="https://web.eecs.umich.edu/~justincj/">Justin Johnson</a>
-              <br>
-              <a href="data/eecs598_report.pdf">Report</a>
-              <br>
-              <p>For this research project, we compiled a unique and curated dataset, referred to as "SubRedCaps," consisting of image-caption pairs extracted from sub-reddits specifically related to food. The dataset spans the time period from April 2020 to April 2022.</p>
-              <p> To enable our study of food image captioning, we pre-trained a bi-directional image captioning model using RegNeX-800MF as the feature extractor for the images. Additionally, we utilized a two-layer encoder-decoder transformer architecture to learn rich semantic representations from the captions, leveraging our subsampled SubRedCaps dataset.</p>
-              <p>Despite working with limited hardware resources, our best model achieved a remarkable 20% zero-shot accuracy on the test-set of the challenging Food-101 dataset. This noteworthy result demonstrates the efficacy of our approach in generating accurate captions for food-related images.</p>
-            </td>
-          </tr>
-        </tbody></table>
-        <br>
-        <br>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/project_images/ml_vlsi.png" alt="Fine-grained Food Classification" width="200" height="120" style="border-style: none">
-            </td>
-            <td width="75%" valign="middle">
-                <papertitle>Quantized Winograd Convolution based accerlator for Convolutional Neural Networks  </papertitle>
-              <br>
-              <em>EECS 598 Course Project </em>, Supervisor :<a href="https://kim.engin.umich.edu/">Hun-Seok Kim</a>
-              <br>
-              <a href="data/eecs598_001_report.pdf">Report</a>
-              <br>
-              <p>We designed and developed an 8-bit quantized flexible Winograd-based convolutional engine in Verilog to achieve decreased inference time and model size for Convolutional Neural Networks (CNNs). To validate the design, we conducted simulations of the entire inference cycle of a CNN using MATLAB.</p> 
-              <p>Our investigation primarily focused on exploring and implementing various quantization techniques widely used in tinyML (Tiny Machine Learning) to effectively reduce model complexity while preserving accuracy.</p>
-            </td>
           </tr>
         </tbody></table>
       </td>
@@ -239,54 +232,34 @@ window.onload = function() {
 
 
 
+<hr class="divider">
+
 <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
   <tr style="padding:0px">
-    <td style="padding:0px">
-
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>
-            <td>
-              <heading>Teaching</heading>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tr>
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <img src="images/logos/um_logo.png" alt="cs188" width="128">
-          </td>
-          <td width="75%" valign="center">
-            Graduate Student Instructor 
-            <br>
-            <br>
-            <a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-452/">EECS 452:  Digital Signal Processing Laboratory</a> (Fall 2022), <a href="https://www.birds.eecs.umich.edu/"> Prof. Shai Revzen </a>
-            <br>
-            <br>
-          </td>
-        </tr>
-      </tbody></table>
-
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <tr>
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <img src="images/logos/um_logo.png" alt="cs188" width="128">
-          </td>
-          <td width="75%" valign="center">
-            Graduate Student Instructor 
-            <br>
-            <br>
-            <a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-452/">EECS 452:  Digital Signal Processing Laboratory</a> (Winter 2023), <a href="https://arsarabi.github.io/"> Prof. Armin Sarabi </a>
-            <br>
-            <br>
-          </td>
-        </tr>
-      </tbody></table>
-    </td> 
-  </tr> 
-</table>  
+    <td style="padding:20px;width:100%;vertical-align:middle">
+      <heading>Teaching</heading>
+      <div class="teach-list">
+        <div class="teach-entry">
+          <div class="teach-logo"><img src="images/logos/um_logo.png" alt="University of Michigan"></div>
+          <div>
+            <div class="cv-role">Graduate Student Instructor</div>
+            <div class="cv-where"><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-452/">EECS 452: Digital Signal Processing Laboratory</a>, with <a href="https://www.birds.eecs.umich.edu/">Prof. Shai Revzen</a></div>
+            <div class="cv-date">Fall 2022</div>
+          </div>
+        </div>
+        <div class="teach-entry">
+          <div class="teach-logo"><img src="images/logos/um_logo.png" alt="University of Michigan"></div>
+          <div>
+            <div class="cv-role">Graduate Student Instructor</div>
+            <div class="cv-where"><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-452/">EECS 452: Digital Signal Processing Laboratory</a>, with <a href="https://arsarabi.github.io/">Prof. Armin Sarabi</a></div>
+            <div class="cv-date">Winter 2023</div>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+</tbody></table>
+  
 
   Website style borrowed from  <a href="https://jonbarron.info/">here</a>.
 </body> 

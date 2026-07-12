@@ -91,7 +91,7 @@ strong {
 
 heading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 32px;
 }
 
 papertitle {
@@ -151,3 +151,219 @@ span.highlight {
 }
 
 /* Add more CSS styling as needed */
+
+/* --- header: social icon tiles under the profile photo --- */
+.social {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+.social a {
+  width: 46px;
+  height: 46px;
+  border-radius: 9px;
+  background: transparent;   /* same as the page background */
+  color: #7c6d5e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  transition: color 0.2s ease;
+}
+.social a:hover {
+  color: #f09228;
+}
+.social svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+/* --- thin divider line under the intro --- */
+.divider {
+  border: none;
+  border-top: 1px solid #e3ded6;
+  max-width: 800px;
+  margin: 24px auto;
+}
+
+/* --- responsive profile photo (scales with its column, never overflows) --- */
+#img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 325 / 400;
+  object-fit: cover;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+
+/* --- click-to-reveal email (blurred "illusion" until clicked) --- */
+.email {
+  filter: blur(5px);
+  cursor: pointer;
+  transition: filter 0.35s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
+}
+.email:hover { filter: blur(3.5px); }
+.email.revealed {
+  filter: none;
+  cursor: auto;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* --- Work section: alternating video cards --- */
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 18px;
+}
+.work-media {
+  width: 100%;
+  aspect-ratio: 325 / 400;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 10px 26px rgba(15, 22, 35, 0.18);
+}
+.work-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.work-title {
+  margin-top: 14px;
+  color: #c1440e;
+  font-weight: 700;
+  font-size: 16px;
+}
+.work-desc {
+  margin-top: 6px;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.55;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+.work-credit {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #8a8a8a;
+}
+.work-credit a { color: #8a8a8a; text-decoration: underline; text-underline-offset: 2px; }
+.work-credit a:hover { color: #c1440e; }
+@media (max-width: 600px) {
+  .work-grid { grid-template-columns: 1fr; }
+}
+
+/* --- Experience: role + where on the left, dates on the right --- */
+.cv-list {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.cv-role {
+  font-size: 18px;
+  font-weight: 700;
+}
+.cv-where {
+  font-size: 14px;
+  margin-top: 3px;
+}
+.cv-date {
+  color: #666;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+/* --- Projects: publication-style rows (figure left, text right) --- */
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  margin-top: 20px;
+}
+.pub {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 26px;
+  align-items: start;
+}
+.pub-fig {
+  width: 250px;
+  height: 180px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.pub-fig img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+.pub-fig-ph {
+  color: #b3b3b3;
+  font-style: italic;
+  font-size: 13px;
+  text-align: center;
+  padding: 12px;
+}
+.pub-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+.pub-authors {
+  font-size: 14px;
+  margin-top: 5px;
+}
+.pub-venue {
+  font-size: 14px;
+  margin-top: 4px;
+}
+.pub-desc {
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #555;
+  font-size: 14px;
+  margin-top: 9px;
+}
+@media (max-width: 640px) {
+  .pub { grid-template-columns: 1fr; }
+  .pub-fig { width: 100%; }
+}
+
+/* --- Teaching: UMich logo + role/course/term (fonts match Experience) --- */
+.teach-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-top: 18px;
+}
+.teach-entry {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.teach-logo img {
+  width: 92px;
+  height: auto;
+  display: block;
+}
+@media (max-width: 640px) {
+  .teach-entry { grid-template-columns: 64px 1fr; gap: 16px; }
+  .teach-logo img { width: 60px; }
+}
