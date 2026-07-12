@@ -160,20 +160,22 @@ span.highlight {
   gap: 14px;
 }
 .social a {
-  width: 46px;
-  height: 46px;
-  border-radius: 9px;
-  background: transparent;   /* same as the page background */
-  color: #7c6d5e;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.62);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 18px;
-  transition: color 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 .social a:hover {
-  color: #f09228;
+  transform: translateY(-3px) scale(1.07);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.16);
 }
 .social svg {
   width: 28px;
@@ -366,4 +368,21 @@ span.highlight {
 @media (max-width: 640px) {
   .teach-entry { grid-template-columns: 64px 1fr; gap: 16px; }
   .teach-logo img { width: 60px; }
+}
+
+/* --- alternating pastel background (inspired by jeremybernste.in) --- */
+@keyframes bgcycle {
+  0%,   16% { background-color: #90e2ea; }  /* cyan   */
+  20%,  36% { background-color: #f0e2b0; }  /* tan    */
+  40%,  56% { background-color: #e7afe9; }  /* pink   */
+  60%,  76% { background-color: #bff0ba; }  /* green  */
+  80%,  96% { background-color: #d4cbf6; }  /* lavender */
+  100%      { background-color: #90e2ea; }
+}
+body {
+  background-color: #90e2ea;
+  animation: bgcycle 36s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
 }
